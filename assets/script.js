@@ -11,7 +11,7 @@ $(document).ready(function () {
         var currentHour = moment().hours();
 
         $(".time-block").each(function () {
-            var previousHour = parseInt($(this).attr("id").split("-")[1]);
+            var previousHour = parseInt($(this).attr("id").split('-')[1]);
 
             if (currentHour === previousHour) {
                 $(this).addClass("present");
@@ -27,15 +27,16 @@ $(document).ready(function () {
 
     var updater = setInterval(timeCheck, 15000);
 
-    $("#currentDay").text(moment().format("dddd, MMMM Do, hh:mm"))
+    $("#currentDay").text(moment().format('MMMM Do YYYY, h:mm a'))
 
-    $('#hour-9 .description').val(localStorage.getItem('hour-9'));
-    $('#hour-10 .description').val(localStorage.getItem('hour-10'));
-    $('#hour-11 .description').val(localStorage.getItem('hour-11'));
-    $('#hour-12 .description').val(localStorage.getItem('hour-12'));
-    $('#hour-13 .description').val(localStorage.getItem('hour-13'));
-    $('#hour-14 .description').val(localStorage.getItem('hour-14'));
-    $('#hour-15 .description').val(localStorage.getItem('hour-15'));
-    $('#hour-16 .description').val(localStorage.getItem('hour-16'));
-    $('#hour-17 .description').val(localStorage.getItem('hour-17'));
+    $("#time-9 .description").val(localStorage.getItem("time-9"));
+    $("#time-10 .description").val(localStorage.getItem("time-10"));
+    $("#time-11 .description").val(localStorage.getItem("time-11"));
+    $("#time-12 .description").val(localStorage.getItem("time-12"));
+    $("#time-13 .description").val(localStorage.getItem("time-13"));
+    $("#time-14 .description").val(localStorage.getItem("time-14"));
+    $("#time-15 .description").val(localStorage.getItem("time-15"));
+    $("#time-16 .description").val(localStorage.getItem("time-16"));
+    $("#time-17 .description").val(localStorage.getItem("time-17"));
+
 });
