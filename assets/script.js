@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
-    $("saveBtn").click(function () {
+    $(".saveBtn").on("click", (function () {
         var time = $(this).parent().attr("id");
         var description = $(this).siblings(".description").val();
 
         localStorage.setItem(time, description);
-    });
+    }));
 
     function hourlyUpdate() {
         var currentHour = moment().hours();
@@ -26,5 +26,7 @@ $(document).ready(function () {
     hourlyUpdate();
 
     $("#currentDay").text(moment().format("dddd, MMMM Do"))
+
+    $("#9am .description").val(localStorage.getItem("9am"));
 
 });
