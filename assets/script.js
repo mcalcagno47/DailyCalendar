@@ -8,17 +8,17 @@ $(document).ready(function () {
     });
 
     function hourlyUpdate() {
-        var currentHour = hours();
-
-        var previousHour = parseInt($(this).attr("id").split("-")[1])
+        var currentHour = moment().hours();
 
         $(".time-block").each(function () {
+            var previousHour = parseInt($(this).attr("id").split("-")[1])
+
             if (currentHour === previousHour) {
-                (".time-block").addClass("present");
+                $(this).addClass("present");
             } else if (currentHour > previousHour) {
-                (".time-block").addClass("future");
+                $(this).addClass("future");
             } else {
-                (".time-block").addClass("past");
+                $(this).addClass("past");
             }
         });
     };
